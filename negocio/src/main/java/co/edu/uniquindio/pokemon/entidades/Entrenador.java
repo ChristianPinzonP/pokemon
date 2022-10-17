@@ -26,4 +26,6 @@ public class Entrenador implements Serializable {
     private String avatar;
     @OneToMany(mappedBy = "entrenador")
     private List<Pokemon_Capturado>pokemon_capturados;
+    @OneToMany(mappedBy = "entrenador")
+    private  List<Equipo>equipos;
 }

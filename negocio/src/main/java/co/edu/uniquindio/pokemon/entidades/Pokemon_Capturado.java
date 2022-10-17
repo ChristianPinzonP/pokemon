@@ -25,6 +25,8 @@ public class Pokemon_Capturado implements Serializable {
     private String defensa;
     private String ataque_especial;
     private String defensa_especial;
+    @OneToOne
+    private Equipo equipo;
     @ManyToOne
     private Pokemon pokemon;
     @ManyToOne
