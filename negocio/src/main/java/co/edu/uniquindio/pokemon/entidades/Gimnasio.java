@@ -2,11 +2,9 @@ package co.edu.uniquindio.pokemon.entidades;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,5 +20,7 @@ public class Gimnasio implements Serializable {
     @EqualsAndHashCode.Include
     private Integer codigo;
     private String nombre;
+    @OneToMany(mappedBy = "gimnasio")
+    private List<Combate>combates;
 
 }

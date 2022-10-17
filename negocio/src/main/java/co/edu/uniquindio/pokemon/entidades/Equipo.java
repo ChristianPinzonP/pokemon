@@ -2,11 +2,10 @@ package co.edu.uniquindio.pokemon.entidades;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -27,5 +26,7 @@ public class Equipo implements Serializable {
     private Pokemon_Capturado pokemon3;
     @ManyToOne
     private Entrenador entrenador;
+    @OneToMany(mappedBy = "equipo1")
+    private List<Combate>combates;
 
 }
